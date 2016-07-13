@@ -12,6 +12,7 @@ group :development do
 end
 
 gem 'bootstrap-sass' 
+gem 'devise', '~> 3.4.0' #возможность для аутентификации в rails-приложениях, разрешает вход в систему по нескольким моделям одновременно
 
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

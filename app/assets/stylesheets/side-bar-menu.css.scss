@@ -122,7 +122,7 @@ body {
     }
 }
 
-.navbar.navbar-default.navbar-fixed-top{
+.navbar.navbar-default.navbar-fixed-top{ /*верхняя голубенькая панель*/
     z-index: 999;
     height: 10px !important; /*непонятно почему но не работает!!! WTF*/
     
@@ -135,4 +135,10 @@ body {
     background: radial-gradient(ellipse at center, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5', GradientType=1 );
     
+    
 }
+
+
+.navbar-fixed-top .container a{ /*стили для Войти/Выйти*/
+        color: black;
+    }

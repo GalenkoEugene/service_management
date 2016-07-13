@@ -10,6 +10,7 @@ Things you may want to cover:
 * System dependencies
 
 * Configuration
+Инструкция по установке и настройке Devise  https://habrahabr.ru/post/208056/
 
 * Database creation
 
