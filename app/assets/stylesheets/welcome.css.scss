@@ -1,0 +1,38 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.top-side-menu{ /*верхняя голубенькая панель*/
+    
+    width: 100%;
+    z-index: 999;
+    height: 30px; /*непонятно почему но не работает!!! WTF*/
+    /*left: -10px;*/
+    padding: 5px;
+    background: linear-gradient(to top, #45688E, #597DA3); /*цвет верхнего меню*/
+    
+    
+    
+    
+}
+
+
+.user-menu { /*стили для Войти/Выйти*/
+        color: #abbbca;
+        margin-left: 20px;
+        font-style: italic; /* Курсивное начертание */
+        .email-style{
+            color: #DAE1E8;
+        }
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #DAE1E8;
+            font-style: normal;
+            margin-left: 20px;
+             
+        }
+        a:hover {
+            color: white;
+        } 
+    }

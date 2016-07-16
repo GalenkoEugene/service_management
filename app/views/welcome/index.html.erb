@@ -2,24 +2,13 @@
     <div id="wrapper">
 
     	<%= render partial: "left_menu" %>
-
+        <%= render partial: "top_menu" %>
         <!-- Page Content -->
         <div id="page-content-wrapper">
 
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                       
-                       <nav class="navbar navbar-default navbar-fixed-top">
-                			<div class="container user-menu">
-                                <% if user_signed_in? %>
-                                    <span>Здравствуйте, <%= current_user.email %></span>
-                                    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
-                                    <% else %>
-                                    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
-                                <% end %>
-                			</div>
-        				</nav>
         				
                     <%= render partial: "content" %>
 

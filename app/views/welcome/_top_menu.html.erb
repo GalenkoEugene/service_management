@@ -1,0 +1,11 @@
+<div class="top-side-menu">
+	<nav class="user-menu">
+   
+        <% if user_signed_in? %>
+	        <span>Здравствуйте, <span class="email-style"><%= current_user.email %></span></span>
+	        <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+	    <% else %>
+	         <%= link_to 'Войти', new_user_session_path %>
+        <% end %>
+	</nav>
+</div>
