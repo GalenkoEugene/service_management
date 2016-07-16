@@ -1,24 +1,26 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
-gem 'rails', '4.2.6'
+ruby '2.3.1'
+gem 'rails', '5.0.0'
 
 group :development do
-  gem 'sqlite3', '1.3.8'
+  gem 'sqlite3'
    # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
 gem 'bootstrap-sass' 
-gem 'devise', '~> 3.4.0' #возможность для аутентификации в rails-приложениях, разрешает вход в систему по нескольким моделям одновременно
+gem 'devise' #возможность для аутентификации в rails-приложениях, разрешает вход в систему по нескольким моделям одновременно
 
-gem 'sass-rails', '~> 5.0'
+gem 'therubyracer' #If you don’t install Node.js, you’ll need to add this to the Gemfile for each Rails application you build
+
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -26,9 +28,9 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sdoc', '0.4.1', group: :doc
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -36,7 +38,7 @@ group :development, :test do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt', '3.1.11'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
