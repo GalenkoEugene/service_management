@@ -1,2 +1,12 @@
-<h1>Persons#profile</h1>
+<% provide(:title, 'Owner') %>
+
+<h1>Страница пользователя</h1>
+	<% if user_signed_in? %>
+	        <span>Здравствуйте, <span class="email-style"><%= current_user.email %></span></span>
+	        <%= link_to 'Выйти', destroy_user_session_path, :method => :delete, class: "btn btn-default" %>
+	    <% else %>
+	         <%= link_to 'Войти', new_user_session_path, class: "btn btn-default" %>
+    <% end %>
+
 <p>Find me in app/views/persons/profile.html.erb</p>
+<%= link_to 'На главную страницу сайта', root_path, class: "btn btn-default" %>
