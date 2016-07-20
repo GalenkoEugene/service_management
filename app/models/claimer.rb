@@ -1,0 +1,2 @@
+class Claimer < ApplicationRecord
+end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'repair_orders/orders'
+
   devise_for :users
   get 'persons/profile'
 
