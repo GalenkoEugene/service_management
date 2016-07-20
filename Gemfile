@@ -35,6 +35,8 @@ gem 'sdoc', '0.4.1', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
 end
 
 # Use ActiveModel has_secure_password
