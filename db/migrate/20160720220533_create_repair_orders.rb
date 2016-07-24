@@ -1,10 +1,10 @@
 class CreateRepairOrders < ActiveRecord::Migration[5.0]
   def change
     create_table :repair_orders do |t|
-      t.integer :tb_climers_id
-      t.integer :tb_devices_id
-      t.integer :tb_Masters_id
-      t.integer :tb_status_order_id
+      t.integer :claimer_id
+      t.integer :device_id
+      t.integer :master_id
+      t.integer :status_order_id
       t.boolean :type_order
       t.datetime :date_create
       t.datetime :date_complite

@@ -4,7 +4,7 @@ class CreateClaimers < ActiveRecord::Migration[5.0]
       t.string :fio
       t.string :phone
       t.string :email
-      t.string :sity
+      t.string :city
       t.string :adress
 
       t.timestamps

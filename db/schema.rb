@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20160720222025) do
     t.string   "fio"
     t.string   "phone"
     t.string   "email"
-    t.string   "sity"
+    t.string   "city"
     t.string   "adress"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(version: 20160720222025) do
   end
 
   create_table "repair_orders", force: :cascade do |t|
-    t.integer  "tb_climers_id"
-    t.integer  "tb_devices_id"
-    t.integer  "tb_Masters_id"
-    t.integer  "tb_status_order_id"
+    t.integer  "claimer_id"
+    t.integer  "device_id"
+    t.integer  "master_id"
+    t.integer  "status_order_id"
     t.boolean  "type_order"
     t.datetime "date_create"
     t.datetime "date_complite"
@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 20160720222025) do
     t.string   "description"
     t.datetime "waranty_period"
     t.datetime "date_purchase"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "status_orders", force: :cascade do |t|
@@ -70,9 +70,9 @@ ActiveRecord::Schema.define(version: 20160720222025) do
     t.string   "description"
     t.float    "price"
     t.integer  "stack_id"
-    t.integer  "repair_orders_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "repair_order_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|
