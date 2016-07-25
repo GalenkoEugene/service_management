@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20160720222025) do
     t.string   "model"
     t.string   "serial_number"
     t.string   "brand"
-    t.string   "type"
+    t.string   "device_type"
     t.string   "defect"
     t.string   "accessories"
     t.string   "appearences"

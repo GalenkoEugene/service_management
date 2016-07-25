@@ -4,8 +4,7 @@ class CreateDevices < ActiveRecord::Migration[5.0]
       t.string :model
       t.string :serial_number
       t.string :brand
-      t.string :type
-      t.string :type
+      t.string :device_type
       t.string :defect
       t.string :accessories
       t.string :appearences

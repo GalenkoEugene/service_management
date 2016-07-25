@@ -1,2 +1,28 @@
-<h1>RepairOrders#orders</h1>
-<p>Find me in app/views/repair_orders/orders.html.erb</p>
+<% provide(:title, 'Orders') %>
+<h1>Заказ</h1>
+
+<table class="table table-inverse table-striped">
+  <thead>
+    <tr>
+      <th>Имя заказчика</th>
+      <th>Устройство</th>
+      <th>Кто ремонтировал</th>
+      <th>Описание</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @repair_orders.each do |order| %>
+
+      <tr>
+        <td><%= @claimers.first.fio %></td>
+        <td><%= order.device_id %></td>
+        <td><%= order.master_id %></td>
+        <td><%= order.description %></td> 
+        
+      </tr>
+   
+    <% end %>
+  </tbody>
+</table>
