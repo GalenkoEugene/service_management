@@ -10,7 +10,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#"><span class="glyphicon glyphicon-inbox"></span> &ensp; Заказы</a>
+                    <!--<a href="#"><span class="glyphicon glyphicon-inbox"></span> &ensp; Заказы</a>-->
+                    <%= link_to raw('<span class="glyphicon glyphicon-inbox"></span>&ensp; Заказы'), repair_orders_orders_url %>
                 </li>
                 <li>
                     <a href="#"><span class="glyphicon glyphicon-usd"></span> &ensp; Кассы</a>
@@ -29,7 +30,8 @@
                     <a href="#"><span class="glyphicon glyphicon-tasks"></span> &ensp; Отчеты</a>
                 </li>
                 <li>
-                    <a href="#"><span class="glyphicon glyphicon-cog"></span> &ensp; Настройки</a>
+                    <!--<a href="#"><span class="glyphicon glyphicon-cog"></span> &ensp; Настройки</a>-->
+                    <%= link_to raw('<span class="glyphicon glyphicon-cog"></span>&ensp; Настройки'), new_master_url %>
                 </li>
             </ul>
         </div>
