@@ -16,9 +16,9 @@
     <% @repair_orders.each do |order| %>
 
       <tr>
-        <td><%= @claimers.first.fio %></td>
-        <td><%= order.device_id %></td>
-        <td><%= order.master_id %></td>
+        <td><%= @claimers.find(order.claimer_id).fio %></td>
+        <td><%= @devices.find(order.device_id).brand %></td>
+        <td><%= @masters.find(order.master_id).name %></td>
         <td><%= order.description %></td> 
         
       </tr>

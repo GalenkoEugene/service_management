@@ -4,5 +4,7 @@ class RepairOrdersController < ApplicationController
   def orders
   	@repair_orders = RepairOrder.all
   	@claimers = Claimer.all
+  	@devices = Device.all
+  	@masters = Master.all
   end
 end
