@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
+  #get 'masters/new'
+  resources :masters
   get 'repair_orders/orders'
-  resources :masters, controller: 'repair_orders'#, as: :masters
-  
-  #namespace :repair_orders do
-  #  resources :masters
-  #end
+
   devise_for :users
   get 'persons/profile'
-  get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
