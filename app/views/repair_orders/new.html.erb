@@ -1,0 +1,13 @@
+<h1>Новый заказ</h1>
+ 
+    <%= form_for @repair_order do |f| %>
+      
+      <% 3.times do %>
+        <%= f.fields_for @repair_order.claimer.build do |addy_form| %>
+          ...
+          <%= addy_form.text_field :fio %>
+          
+        <% end %>
+      <% end %>
+      <%= f.submit %>
+    <% end %>

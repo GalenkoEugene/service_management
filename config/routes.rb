@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  #get 'masters/new'
   resources :masters
-  get 'repair_orders/orders'
+  resources :repair_orders
+  #get 'repair_orders/orders'
 
   devise_for :users
   get 'persons/profile'
