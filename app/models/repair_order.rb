@@ -1,5 +1,5 @@
 class RepairOrder < ApplicationRecord
-	validates :claimer_id, presence: true
+	#validates :claimer_id, presence: true
 	
 	belongs_to :claimer
 	has_one :device
@@ -7,6 +7,6 @@ class RepairOrder < ApplicationRecord
 	has_one :status_order
 	has_many :used_repair_parts
 
-	#accepts_nested_attributes_for :claimer
+	accepts_nested_attributes_for :claimer
 	
 end
