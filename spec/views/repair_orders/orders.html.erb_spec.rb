@@ -6,11 +6,11 @@ require 'rails_helper'
 
 describe "RepairOrders" do
 
-  describe "orders" do
+  describe "index" do
 
-    it "should have the content 'RepairOrders#orders'" do
-      visit '/repair_orders/orders'
-      expect(page).to have_content('RepairOrders#orders')
+    it "should have the content 'Заказ'" do
+      visit '/repair_orders'
+      expect(page).to have_content('Заказ')
     end
   end
 end
