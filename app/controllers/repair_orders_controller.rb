@@ -9,8 +9,10 @@ class RepairOrdersController < ApplicationController
   end
   
   def new
+    @master_options = Master.all.map{|u| [ u.name, u.id ] } #for select list
   	@repair_order = RepairOrder.new
     @repair_order.build_claimer
+    @repair_order.build_device
   end
   
   def create
@@ -28,7 +30,9 @@ class RepairOrdersController < ApplicationController
   end
 
   def repair_order_params
-    params.require(:repair_order).permit(:claimer_id, :description, claimer_attributes: [:fio, :phone, :email, :city, :adress])
+    params.require(:repair_order).permit(:claimer_id, :master_id, :description, 
+      claimer_attributes: [:fio, :phone, :email, :city, :adress], 
+      device_attributes: [:model, :serial_number, :brand, :device_type, :defect, :accessories, :appearences])
   end
 
 end

@@ -1,11 +1,8 @@
 <h1>Новый заказ</h1>
  
     <%= form_for @repair_order do |f| %>
-     <p>Описание:</p>
-     <div class="field">  
-      <%= f.text_field :description, class: "form-control", placeholder: "Добавить примечание к заказу" %>
-     </div>
-     <br>
+     
+<p>Клиент:</p>
         <%= f.fields_for :claimer do |claimer_form| %>
           <div class="field"> 
             <%= claimer_form.text_field :fio, class: "form-control", placeholder: "Ф.И.О клиента" %>
@@ -29,6 +26,48 @@
           <br>
         <% end %>
       <br>
+<p>Устройство:</p>
+        <%= f.fields_for :device do |device_form| %>
+          <div class="field"> 
+            <%= device_form.text_field :model, class: "form-control", placeholder: "Модель устройства" %>
+          </div>
+          <br>
+          <div class="field"> 
+            <%= device_form.text_field :serial_number, class: "form-control", placeholder: "Серийный номер" %>
+          </div>
+          <br>
+          <div class="field"> 
+            <%= device_form.text_field :brand, class: "form-control", placeholder: "Бренд" %>
+          </div>
+          <br>
+          <div class="field"> 
+            <%= device_form.text_field :device_type, class: "form-control", placeholder: "Тип устройства" %>
+          </div>
+          <br>
+          <div class="field"> 
+            <%= device_form.text_field :defect, class: "form-control", placeholder: "Заявленный дефект" %>
+          </div>
+          <br>
+          <div class="field"> 
+            <%= device_form.text_field :accessories, class: "form-control", placeholder: "Комплектность" %>
+          </div>
+          <br>
+          <div class="field"> 
+            <%= device_form.text_field :appearences, class: "form-control", placeholder: "Внешний вид" %>
+          </div>
+          <br>
+        <% end %>
+ 
+<p>непосредственно таблица repair_orders:</p>
+    <p>Выбор мастера:</p>
+     
+      <%= select(:repair_order, :master_id, @master_options) %> <!-- выпадающее меню списка мастеров -->
+      <br><br>
+     <div class="field">  
+      <%= f.text_area :description, size: "15x3", class: "form-control", placeholder: "Добавить примечание к заказу" %>
+     </div>
+     <br>
+  <br>
       <%= f.submit "Создать заказ", class: "btn btn-primary"%>
     <% end %>
 <br>
