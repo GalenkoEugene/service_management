@@ -1,3 +1,3 @@
 class StatusOrder < ApplicationRecord
-	has_many :repair_orders
+	belongs_to :repair_order
 end

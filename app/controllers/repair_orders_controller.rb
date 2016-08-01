@@ -10,6 +10,7 @@ class RepairOrdersController < ApplicationController
   
   def new
   	@repair_order = RepairOrder.new
+    @claimer = Claimer.new
   end
 
 

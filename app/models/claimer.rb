@@ -5,6 +5,9 @@ class Claimer < ApplicationRecord
 	validates	:city, 	presence: true, length: { maximum: 20 }
 	validates	:adress, presence: true, length: { maximum: 60 }
 
+	has_many :repair_orders	
 	has_many :devices, :through => :repair_order
+	
+	accepts_nested_attributes_for :repair_orders
 	
 end
