@@ -28,7 +28,7 @@ class RepairOrdersController < ApplicationController
   end
 
   def repair_order_params
-    params.require(:repair_order).permit(:claimer_id, :description, claimer_attributes: [:fio])
+    params.require(:repair_order).permit(:claimer_id, :description, claimer_attributes: [:fio, :phone, :email, :city, :adress])
   end
 
 end
