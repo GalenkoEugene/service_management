@@ -1,4 +1,5 @@
 class MastersController < ApplicationController
+  before_filter :authenticate_user!
   def new
   	@master = Master.new
   end
