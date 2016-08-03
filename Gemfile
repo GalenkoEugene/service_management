@@ -13,7 +13,7 @@ end
 
 gem 'bootstrap-sass' 
 gem 'devise' #возможность для аутентификации в rails-приложениях, разрешает вход в систему по нескольким моделям одновременно
-
+gem 'jquery-ui-rails'
 gem 'therubyracer' #If you don’t install Node.js, you’ll need to add this to the Gemfile for each Rails application you build
 
 gem 'sass-rails'

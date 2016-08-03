@@ -11,7 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function($) {
+    // here the $ function is jQuery's because it's an argument
+    // to the ready handler
+    $('.datepicker').datepicker();
+  });

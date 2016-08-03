@@ -30,7 +30,8 @@ class RepairOrdersController < ApplicationController
   end
 
   def repair_order_params
-    params.require(:repair_order).permit(:claimer_id, :master_id, :description, 
+    params.require(:repair_order).permit(:claimer_id, :master_id, :description, :type_order, :date_create,
+                                         :date_complite, :date_return, :date_dead_line, :waranty_period, :date_purchase,
       claimer_attributes: [:fio, :phone, :email, :city, :adress], 
       device_attributes: [:model, :serial_number, :brand, :device_type, :defect, :accessories, :appearences])
   end
