@@ -20,7 +20,7 @@ class RepairOrdersController < ApplicationController
 
     respond_to do |format|
       if @repair_order.save
-        format.html { redirect_to new_master_url, notice: 'Заказ успешно добавден.' }
+        format.html { redirect_to repair_orders_url, notice: 'Заказ успешно добавлен.' }
         format.json { render action: 'new', status: :created, location: @repair_order }
       else
         format.html { render action: 'new' }
