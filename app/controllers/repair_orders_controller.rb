@@ -2,7 +2,7 @@ class RepairOrdersController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-  	@repair_orders = RepairOrder.all
+  	@repair_orders = RepairOrder.all.reverse_order
   	@claimers = Claimer.all
   	@devices = Device.all
   	@masters = Master.all
