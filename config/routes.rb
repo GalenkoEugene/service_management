@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :masters
   resources :repair_orders
+  #resources :stock
   #get 'repair_orders/orders'
+
+  get 'stock/index'
 
   devise_for :users
   get 'persons/profile'

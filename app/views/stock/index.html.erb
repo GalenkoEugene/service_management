@@ -1,0 +1,53 @@
+
+<ul class="nav nav-tabs" id="stock-list">
+  <li class="active"><a href="#stock-show"> Наличие </a></li>
+  <li><a href="#borrowed_products"> 2 </a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="stock-show">
+    <form class="form-horizontal">
+      <table id=tblist class="table table-bordered table-striped table-hover">
+        <thead>
+          <tr><td><input type=text class="form-control" /></td><td><input type=text class="form-control" /></td><td><input type=text class="form-control" /></td><td><input type=text class="form-control" /></td></tr>
+          <tr class='info'><td>Артикул</td><td>Наименование</td><td>наличие, ед.</td><td>цена</td></tr>
+        </thead>
+      <tbody>
+          <tr><td>11111111111</td><td>Наименование</td><td>10</td><td>125,6</td></tr>
+      </tbody>
+      </table>
+    </form>
+  </div>
+  <div class="tab-pane" id="borrowed_products" > 2 </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModals" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+
+
+<script>
+  $('#stock-list a').click(function(e){
+    e.preventDefault();
+    $(this).tab('show')
+  });
+  
+   $('#tblist > tbody > tr').dblclick(function(){
+       $('#myModals').modal('show')
+    });
+  
+</script>
