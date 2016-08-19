@@ -24,7 +24,7 @@
         <td><input type="checkbox" /></td>
         <td><%= order.id %></td>
         <td><%= order.date_dead_line %></td>
-        <td><%= @masters.find(order.master_id).name %> <br> <%= order.created_at %></td>
+        <td><%= @masters.find(order.master_id).name %> <br> <%= order.created_at.strftime("%d-%m-%Y в %H:%M") %></td>
         <td><%= @devices.find(order.device_id).device_type %></td>
         <td><%= @devices.find(order.device_id).brand %></td>
         <td><%= @devices.find(order.device_id).model %></td>
