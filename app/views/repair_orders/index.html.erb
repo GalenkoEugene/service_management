@@ -9,7 +9,7 @@
       <th>ПРИНЯЛ</th>
       <th>ТИП УСТРОЙСТВА</th>
       <th>БРЕНД</th>
-      <th>МОДЕЛЬ</th>
+      <th>УСТРОЙСТВО</th>
       <th>НЕИСПРАВНОСТЬ</th>
       <th>КЛИЕНТ</th>      
       <th>ЦЕНА</th>
@@ -24,12 +24,12 @@
         <td><input type="checkbox" /></td>
         <td><%= order.id %></td>
         <td><% t = sec2dhms(order.date_dead_line.to_f - order.created_at.to_f) %> <%= pluralize("#{t[0]}", 'день', 'дней') %> <% order.date_dead_line %> </td>
-        <td><%= @masters.find(order.master_id).name %> <br> <%= order.created_at.strftime("%d-%m-%Y в %H:%M") %></td>
+        <td><%= @masters.find(order.master_id).name %> <br> <div class="additional_info_in_view"><%= order.created_at.strftime("%d-%m-%Y в %H:%M") %></div></td>
         <td><%= @devices.find(order.device_id).device_type %></td>
         <td><%= @devices.find(order.device_id).brand %></td>
-        <td><%= @devices.find(order.device_id).model %></td>
+        <td> <%= @devices.find(order.device_id).brand %> <%= @devices.find(order.device_id).model %> <br><div class="additional_info_in_view"><%= @devices.find(order.device_id).serial_number %></div></td>
         <td><%= @devices.find(order.device_id).defect %></td>
-        <td><%= @claimers.find(order.claimer_id).fio %> <br> <%= @claimers.find(order.claimer_id).phone %></td>        
+        <td><%= @claimers.find(order.claimer_id).fio %> <br> <div class="additional_info_in_view"><%= @claimers.find(order.claimer_id).phone %></div></td>        
         <td>$</td> 
         
       </tr>
