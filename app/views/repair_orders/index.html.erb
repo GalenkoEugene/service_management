@@ -23,7 +23,7 @@
       <tr>
         <td><input type="checkbox" /></td>
         <td><%= order.id %></td>
-        <td><% t = sec2dhms(order.date_dead_line.to_f - order.created_at.to_f) %> <%= "#{t[0]} день" %> <% order.date_dead_line %> </td>
+        <td><% t = sec2dhms(order.date_dead_line.to_f - order.created_at.to_f) %> <%= pluralize("#{t[0]}", 'день', 'дней') %> <% order.date_dead_line %> </td>
         <td><%= @masters.find(order.master_id).name %> <br> <%= order.created_at.strftime("%d-%m-%Y в %H:%M") %></td>
         <td><%= @devices.find(order.device_id).device_type %></td>
         <td><%= @devices.find(order.device_id).brand %></td>

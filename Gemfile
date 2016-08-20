@@ -4,22 +4,20 @@ gem 'rails', '5.0.0'
 
 group :development do
   gem 'sqlite3'
-   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console'
+  gem 'web-console'# Access an IRB console on exception pages or by using <%= console %> in views
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
+gem 'russian' # https://github.com/yaroslav/russian
 gem 'bootstrap-sass' 
 gem 'devise' #возможность для аутентификации в rails-приложениях, разрешает вход в систему по нескольким моделям одновременно
 gem 'jquery-ui-rails'
 gem 'therubyracer' #If you don’t install Node.js, you’ll need to add this to the Gemfile for each Rails application you build
 
-gem 'sass-rails'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier'
-# Use CoffeeScript for .coffee assets and views
+gem 'sass-rails'# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier'# Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
