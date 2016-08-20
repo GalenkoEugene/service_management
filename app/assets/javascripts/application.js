@@ -20,5 +20,5 @@
 $(document).ready(function($) {
     // here the $ function is jQuery's because it's an argument
     // to the ready handler
-    $('.datepicker').datepicker();
+    $('.datepicker').datepicker({dateFormat:'yy-mm-dd'});
   });
