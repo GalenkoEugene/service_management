@@ -3,6 +3,12 @@ class RepairOrdersController < ApplicationController
   
   def index
   	@repair_orders = RepairOrder.all.reverse_order
+    if params[:search]   
+      @repair_orders = RepairOrder.search(params[:search]).order("created_at DESC")
+    else 
+      @repair_orders = RepairOrder.all.order('created_at DESC')
+    end
+    
   	@claimers = Claimer.all
   	@devices = Device.all
   	@masters = Master.all

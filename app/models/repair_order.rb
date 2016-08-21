@@ -9,5 +9,9 @@ class RepairOrder < ApplicationRecord
 
 	accepts_nested_attributes_for :claimer
 	accepts_nested_attributes_for :device
+
+	def self.search(query)
+  	  where("claimers.phone like ?", "%#{query}%") #search method by phone
+	end
 	
 end

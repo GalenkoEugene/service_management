@@ -1,17 +1,83 @@
 <% provide(:title, 'Orders') %>
-<%= link_to 'Создать новый заказ', new_repair_order_url, class: 'btn btn-info' %>
+<%= link_to 'Создать новый заказ', new_repair_order_url, class: 'btn btn-success' %>
 <table class="table table-inverse table-striped">
   <thead>
     <tr>
       <th><input type="checkbox" /></th>
       <th>№ ЗАКАЗА</th>
-      <th>КРАЙНИЙ СРОК</th>
-      <th>ПРИНЯЛ</th>
-      <th>ТИП УСТРОЙСТВА</th>
-      <th>БРЕНД</th>
+      <th>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle-js" data-toggle="dropdown">
+            КРАЙНИЙ СРОК 
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Просроченные</a></li>
+            <li><a href="#">Сначала новые</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Сбросить</a></li>
+          </ul>
+        </div>
+      </th>
+      <th>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle-js" data-toggle="dropdown">
+            ПРИНЯЛ 
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <% @masters.map do |master| %>        
+              <li><a href=""><%= master.name %> - <%= master.category %></a></li>
+            <% end -%>
+          </ul>
+        </div>
+      </th>
+      <th>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle-js" data-toggle="dropdown">
+            ТИП УСТРОЙСТВА 
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <% @devices.map do |device| %>        
+              <li><a href=""><%= device.device_type %></a></li>
+            <% end -%>
+          </ul>
+        </div>
+      </th>
+      <th>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle-js" data-toggle="dropdown">
+            БРЕНД
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <% @devices.map do |device| %>        
+              <li><a href=""><%= device.brand %></a></li>
+            <% end -%>
+          </ul>
+        </div>
+      </th>
       <th>УСТРОЙСТВО</th>
       <th>НЕИСПРАВНОСТЬ</th>
-      <th>КЛИЕНТ</th>      
+      <th>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle-js" data-toggle="dropdown">
+            КЛИЕНТ
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <div id="search">
+              <%= form_tag(RepairOrder, :method => "get") do %>
+                  <div>
+                    <%= text_field_tag :search, params[:search], placeholder: "Поиск по номеру" %>
+                    <button type="submit">Найти</button>
+                  </div>
+              <% end %>
+            </div>
+          </ul>
+        </div>
+      </th>      
       <th>ЦЕНА</th>
 
     </tr>
@@ -37,16 +103,11 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Вернутся на главную', root_url%>
-<div class="container">
-                                            
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-    </ul>
-  </div>
-</div>
+<%= link_to 'Вернутся на главную', root_url, class: 'btn' %>
+
+       <script type="text/javascript">
+    $(document).ready(function(){
+      $(".dropdown-toggle-js").dropdown();
+    });  
+    </script>
+     
