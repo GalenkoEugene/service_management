@@ -15,7 +15,7 @@
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
+
 //= require_tree .
 $(document).ready(function($) {
     // here the $ function is jQuery's because it's an argument
