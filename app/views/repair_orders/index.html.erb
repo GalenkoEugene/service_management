@@ -53,8 +53,10 @@
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <% @devices.map do |device| %>        
-              <li><a href=""><%= device.brand %></a></li>
+          <% d = @devices.all.map {|a| a.brand}.uniq %> 
+            <% d.map do |device| %>
+                    
+              <li><a href=""><%= device %></a></li>
             <% end -%>
           </ul>
         </div>
