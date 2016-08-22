@@ -11,7 +11,8 @@ class RepairOrder < ApplicationRecord
 	accepts_nested_attributes_for :device
 
 	def self.search(query)
-  	  where("claimers.phone like ?", "%#{query}%") #search method by phone
+  	  #where("repair_orders.master_id like ?", "%#{query}%") #search by Masters
+  	  joins(:claimer).where("phone like ?", "%#{query}%") #search method by phone
 	end
 	
 end

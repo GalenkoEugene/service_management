@@ -1,5 +1,6 @@
 <% provide(:title, 'Orders') %>
-<%= link_to 'Создать новый заказ', new_repair_order_url, class: 'btn btn-success' %>
+<%= link_to 'Создать новый заказ', new_repair_order_url, class: 'btn btn-success' %>  
+<%= link_to raw('<span class="glyphicon glyphicon-filter"></span>'), repair_orders_url %> 
 <table class="table table-inverse table-striped">
   <thead>
     <tr>

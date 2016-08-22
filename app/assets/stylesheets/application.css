@@ -14,3 +14,11 @@
  *= require_self
  *= require jquery-ui
  */
+.glyphicon {
+    font-size: 20px;
+}
+
+.glyphicon-filter{
+	font-size: 25px;
+	float:right;
+}
