@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811082607) do
+ActiveRecord::Schema.define(version: 20160825135009) do
+
+  create_table "brands", force: :cascade do |t|
+    t.string   "brand_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "claimers", force: :cascade do |t|
     t.string   "fio"
@@ -25,13 +31,13 @@ ActiveRecord::Schema.define(version: 20160811082607) do
   create_table "devices", force: :cascade do |t|
     t.string   "model"
     t.string   "serial_number"
-    t.string   "brand"
     t.string   "device_type"
     t.string   "defect"
     t.string   "accessories"
     t.string   "appearences"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "brand_id"
   end
 
   create_table "masters", force: :cascade do |t|

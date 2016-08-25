@@ -12,6 +12,7 @@ class RepairOrdersController < ApplicationController
   	@claimers = Claimer.all
   	@devices = Device.all
   	@masters = Master.all
+    @brands = Brand.all
   end
   
   def new

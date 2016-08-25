@@ -5,6 +5,7 @@ class RepairOrder < ApplicationRecord
 	belongs_to :device
 	has_one :master
 	has_one :status_order
+	has_one :brand
 	has_many :used_repair_parts
 
 	accepts_nested_attributes_for :claimer

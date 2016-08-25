@@ -53,11 +53,11 @@
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-          <% d = @devices.all.map {|a| a.brand}.uniq %> 
-            <% d.map do |device| %>
+          
+            
                     
-              <li><a href=""><%= device %></a></li>
-            <% end -%>
+              <li><a href=""></a></li>
+            
           </ul>
         </div>
       </th>
@@ -95,8 +95,8 @@
         <td><% t = sec2dhms(order.date_dead_line.to_f - order.created_at.to_f) %> <%= pluralize("#{t[0]}", 'день', 'дней') %> <% order.date_dead_line %> </td>
         <td><%= @masters.find(order.master_id).name %> <br> <div class="additional_info_in_view"><%= order.created_at.strftime("%d-%m-%Y в %H:%M") %></div></td>
         <td><%= @devices.find(order.device_id).device_type %></td>
-        <td><%= @devices.find(order.device_id).brand %></td>
-        <td> <%= @devices.find(order.device_id).brand %> <%= @devices.find(order.device_id).model %> <br><div class="additional_info_in_view"><%= @devices.find(order.device_id).serial_number %></div></td>
+        <td><%= current_brand_name = @brands.find(@devices.find(order.device_id).brand_id).brand_name %></td>
+        <td> <%= current_brand_name %> <%= @devices.find(order.device_id).model %> <br><div class="additional_info_in_view"><%= @devices.find(order.device_id).serial_number %></div></td>
         <td><%= @devices.find(order.device_id).defect %></td>
         <td><%= @claimers.find(order.claimer_id).fio %> <br> <div class="additional_info_in_view"><%= @claimers.find(order.claimer_id).phone %></div></td>        
         <td>$</td> 
