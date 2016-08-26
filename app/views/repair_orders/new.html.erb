@@ -36,8 +36,8 @@
             <%= device_form.text_field :serial_number, class: "form-control", placeholder: "Серийный номер" %>
           
           <br>
-           
-            <%= device_form.text_field :brand, class: "form-control", placeholder: "Бренд" %>
+            <%= device_form.select :brand_id,  options_for_select(Brand.all.map{|u| [ u.brand_name, u.id ] }) %>
+            <% #device_form.text_field :brand_id, class: "form-control", placeholder: "Бренд" %>
           
           <br>
            

@@ -17,6 +17,7 @@ class RepairOrdersController < ApplicationController
   
   def new
     @master_options = Master.all.map{|u| [ u.name, u.id ] } #for select list
+    @brand_options = Brand.all.map{|u| [ u.brand_name, u.id ] }
   	@repair_order = RepairOrder.new
     @repair_order.build_claimer
     @repair_order.build_device
@@ -40,7 +41,8 @@ class RepairOrdersController < ApplicationController
     params.require(:repair_order).permit(:claimer_id, :master_id, :description, :type_order, :date_create,
                                          :date_complite, :date_return, :date_dead_line, :waranty_period, :date_purchase,
       claimer_attributes: [:fio, :phone, :email, :city, :adress], 
-      device_attributes: [:model, :serial_number, :brand, :device_type, :defect, :accessories, :appearences])
+      device_attributes: [:model, :serial_number, :brand_id, :device_type, :defect, :accessories, :appearences],
+      brand_attributes: [:brand_name])
   end
 
 end
