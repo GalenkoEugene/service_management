@@ -28,7 +28,7 @@
           </a>
           <ul class="dropdown-menu">
             <% @masters.map do |master| %>        
-              <li><a href=""><%= master.name %> - <%= master.category %></a></li>
+              <li><a href=""><%= master.name %> <div class="additional_info_in_view" ><%= master.category %></div></a></li>
             <% end -%>
           </ul>
         </div>
@@ -92,7 +92,7 @@
       <tr>
         <td><input type="checkbox" /></td>
         <td><%= order.id %></td>
-        <td><% t = sec2dhms(order.date_dead_line.to_f - order.created_at.to_f) %> <%= pluralize("#{t[0]}", 'день', 'дней') %> <% order.date_dead_line %> </td>
+        <td><% t = sec2dhms(order.date_dead_line.to_time - Date.today.to_time) %> <%= pluralize("#{t[0]}", 'день', 'дней') %> <% order.date_dead_line %> </td>
         <td><%= @masters.find(order.master_id).name %> <br> <div class="additional_info_in_view"><%= order.created_at.strftime("%d-%m-%Y в %H:%M") %></div></td>
         <td><%= @devices.find(order.device_id).device_type %></td>
         <td><%= current_brand_name = @brands.find(@devices.find(order.device_id).brand_id).brand_name %></td>
